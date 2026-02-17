@@ -31,7 +31,7 @@ This document prepared based on my testing experience.
 
 
 ## 3. Exploratory charters:
-## 3. Exploratory charters
+
 
 | ID  | What I planned to check | Screens | Priority |
 |-----|-------------------------|---------|----------|
