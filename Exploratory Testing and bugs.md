@@ -51,13 +51,13 @@ This document prepared based on my testing experience.
 ## 4. Session notes and findings:
 
 ### C01_Add Expense – Findings
+
 **Perform below Steps**
 - Clicked on '-' button on Main Screen and 35 EUR expense added and Choose CATEGORY "Food" now Check for notification.
 - Added 22.50 EUR expense and Choose CATEGORY "Transport" now Check for notification.
 - Added 21.99 EUR expense and Choose CATEGORY "Food" now Check for notification.
 
 **What worked**
-
 - All the expenses updated in the History with Red dot symbol.
 - CATEGORY updated in the History with value and currency.
 - Total balance updated on the screen.
@@ -87,7 +87,6 @@ Add Account Payment Method Cash and VISA Card.
 - Check History by clicking on Three lines. |
 
 **What worked**
-
 - All the income added are updated in the History with Green dot symbol.
 - CATEGORY "Salary" and "Deposits" are updated in the History with value and currency.
 - Total balance updated on the screen.
@@ -95,7 +94,6 @@ Add Account Payment Method Cash and VISA Card.
 **What didn't work**
 
 ### C02_Add Income – Bug
-
 
 | Field             | Details                                                                                          |
 |-------------------|--------------------------------------------------------------------------------------------------|
@@ -110,6 +108,20 @@ Add Account Payment Method Cash and VISA Card.
 | Impact            | User is unable to understand in which Account Method income is added whether its Cash or VISA Card from History.|
 
 
+### C03_Hisotry List – Findings
+
+**Perform below Steps**
+Add Account Payment Method Cash and VISA Card.
+- Main screen Click on  '-' and add expense 500 EUR "Clothes" category.
+- Main screen Click on  '-' and add expense 1200 EUR "Gifts" category.
+- Click on Expense Clothes in History and update amount to 2300EUR.
+- Check the History again and "Clothes" category amount should be updated to 2300 EUR.
+ 
+**What worked**
+- All the expense added are updated in the History with Red dot symbol.
+- CATEGORY "Clothes" and "Gifts" are updated in the History with value and currency.
+- Total balance updated on the screen after added expenses.
+- After updating expense CATEGORY "Clothes", amount is updated in History and total balance is also updated.
 
 
 ## 5. Defect and charter prioritisation:
