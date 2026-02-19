@@ -49,10 +49,12 @@ This document prepared based on my testing experience.
 
 
 ## 4. Session notes and findings:
+
+### C01_Add Expense – Findings
 **Perform below Steps**
-- Clicked on '-' button on Main Screen → 35 EUR expense added and Choose CATEGORY "Food" → Check for notification 
-- Added 22.50 EUR expense and Choose CATEGORY "Transport" → Check for notification
-- Added 21.99 EUR expense and Choose CATEGORY "Food" → Check for notification
+- Clicked on '-' button on Main Screen and 35 EUR expense added and Choose CATEGORY "Food" now Check for notification.
+- Added 22.50 EUR expense and Choose CATEGORY "Transport" now Check for notification.
+- Added 21.99 EUR expense and Choose CATEGORY "Food" now Check for notification.
 
 **What worked**
 
@@ -62,7 +64,7 @@ This document prepared based on my testing experience.
 
 **What didn't work**
 
-### C01_Add Expense – Findings
+### C01_Add Expense – Bug
 
 | Field             | BUG Details                                                                                          |
 |-------------------|--------------------------------------------------------------------------------------------------|
@@ -75,6 +77,38 @@ This document prepared based on my testing experience.
 | Expected Result   | History shows a summarized total for the "Food" category (around 56.99 EUR for the selected period). |
 | Actual Result     | History only shows individual "Food" entries and no clear total amount for the "Food" category.  |
 | Impact            | The user cannot easily see how much was spent on a single category, which makes it harder to understand spending patterns. |
+
+### C02_Add Income – Findings
+
+**Perform below Steps**
+Add Account Payment Method Cash and VISA Card.
+- Main screen Click on  '+' added income 5000 EUR "Salary" in VISA card Account Method.
+- Click on '+' add income 2000 EUR "Deposits" in Cash Account Method.
+- Check History by clicking on Three lines. |
+
+**What worked**
+
+- All the income added are updated in the History with Green dot symbol.
+- CATEGORY "Salary" and "Deposits" are updated in the History with value and currency.
+- Total balance updated on the screen.
+
+**What didn't work**
+
+### C02_Add Income – Bug
+
+
+| Field             | Details                                                                                          |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| Bug ID            | BUG-1002                                                                                         |
+| Title             |Selected Account payment method is not present in History for added Income.                              |
+| Status            | New                                                                                              |
+| Charter Reference | C02_Add Income                                                                                   |
+| Operating System  | Android                                                                                          |
+| Steps to Reproduce | 1. Main screen Click on  '+' add income 5000 EUR "Salary" in VISA card Account Method.<br>2.Click on '+' add income 2000 EUR "Deposits" in Cash Account Method.<br>3. Check History by clicking on Three lines. |
+| Expected Result   |After clicking on Three Lines on Main Screen, Account Method selected should be displayed in the History.      |
+| Actual Result     |After clicking on Three Lines on Main Screen, Account Method selected is not displayed in the History.                     |
+| Impact            | User is unable to understand in which Account Method income is added whether its Cash or VISA Card from History.|
+
 
 
 
