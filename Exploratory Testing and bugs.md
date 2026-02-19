@@ -111,7 +111,6 @@ Add Account Payment Method Cash and VISA Card.
 ### C03_Hisotry List – Findings
 
 **Perform below Steps**
-Add Account Payment Method Cash and VISA Card.
 - Main screen Click on  '-' and add expense 500 EUR "Clothes" category.
 - Main screen Click on  '-' and add expense 1200 EUR "Gifts" category.
 - Click on Expense Clothes in History and update amount to 2300EUR.
@@ -122,6 +121,27 @@ Add Account Payment Method Cash and VISA Card.
 - CATEGORY "Clothes" and "Gifts" are updated in the History with value and currency.
 - Total balance updated on the screen after added expenses.
 - After updating expense CATEGORY "Clothes", amount is updated in History and total balance is also updated.
+
+### C04_Hisotry List – Findings
+
+**Perform below Steps**
+- Main screen Click on  '+' and add Income 7000 EUR "SALARY" category.
+- Main screen Click on  '-' and add expense 500 EUR "Clothes" category.
+- Main screen Click on  '+' and add Income 12000 EUR "DEPOSITS" category.
+- Main screen Click on  '-' and add expense 1200 EUR "Gifts" category.
+- Check the History for all the added expenses and added Income.
+- Delete the expense transaction 500 EUR "Clothes" category from History.
+- Total balance should be updated after deleting transaction.
+- History List should be updated after deleting transaction.
+
+
+**What worked**
+- All the expense added are updated in the History with Red dot symbol.
+- All the Income added are updated in the History with Green dot symbol.
+- CATEGORY "Clothes" and "Gifts" are updated in the History with value and currency.
+- CATEGORY "SALARY" and "DEPOSITS" are updated in the History with value and currency.
+- Total balance updated on the screen after deleted transaction.
+- After deleting 500 EUR CATEGORY "Clothes", History is updated.
 
 
 ## 5. Defect and charter prioritisation:
