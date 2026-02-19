@@ -49,6 +49,34 @@ This document prepared based on my testing experience.
 
 
 ## 4. Session notes and findings:
+**Perform below Steps**
+- Clicked on '-' button on Main Screen → 35 EUR expense added and Choose CATEGORY "Food" → Check for notification 
+- Added 22.50 EUR expense and Choose CATEGORY "Transport" → Check for notification
+- Added 21.99 EUR expense and Choose CATEGORY "Food" → Check for notification
+
+**What worked**
+
+- All the expenses updated in the History with Red dot symbol.
+- CATEGORY updated in the History with value and currency.
+- Total balance updated on the screen.
+
+**What didn't work**
+
+### C01_Add Expense – Findings
+
+| Field             | BUG Details                                                                                          |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| Bug ID            | BUG-1001                                                                                         |
+| Title             | Amount for same "Food" category is not summarized in History                                    |
+| Status            | New                                                                                              |
+| Charter Reference | C01_Add Expense                                                                                  |
+| Operating System  | Android                                                                                          |
+| Steps to Reproduce | 1. Add an expense of 35 EUR in the "Food" category.<br>2. Add another expense of 21.99 EUR in the "Food" category.<br>3. Go to History (or category view) and look for the total for "Food". |
+| Expected Result   | History shows a summarized total for the "Food" category (around 56.99 EUR for the selected period). |
+| Actual Result     | History only shows individual "Food" entries and no clear total amount for the "Food" category.  |
+| Impact            | The user cannot easily see how much was spent on a single category, which makes it harder to understand spending patterns. |
+
+
 
 ## 5. Defect and charter prioritisation:
 
