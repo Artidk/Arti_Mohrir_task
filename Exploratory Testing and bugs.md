@@ -233,6 +233,39 @@ Add Account Payment Method Cash and VISA Card.
 - Added Expenses on different Month and week , dates.
 - These transactions are visible on main screen after Switch between daily/weekly/monthly view  
 
+### C09_Language and Currency – Findings
+
+**Perform below Steps**
+- Select Language "English" and Currency "EUR" from Settings.
+- Check the Application is translated according to selected Language and Balance is visible with correct selected currency.
+- Select "Deutsch" and Currency "EUR" from Settings.
+- Check the Main screen is translated according to selected Language and Balance is visible with correct selected currency.
+- Select Language "Italino" and Currency "CAD" from Settings.
+- Check the Main screen is translated according to selected Language and Balance is visible with correct selected currency.
+
+**What worked**
+- Language "English" and Currency "EUR" from Settings can be selected.
+- Language "Deutsch" and Currency "EUR" from Settings can be selected.
+- Language Language "Italino" and Currency "CAD" from Settings can be selected.
+- Translation is partially available for an Application. Like popup and "Balance" text is not translated according to selected Language for ex "Italino". English and Deutsch translation is present on the Application.
+- Currency is selected and visible on the screen.
+
+
+**What didn't work**
+
+### C09_Language and Currency – Bug
+
+| Field             | Details                                                                                          |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| Bug ID            | BUG-1005                                                                                         |
+| Title             | Popup and "Balance" text translation is not present for other Languages like "Italino".Only English and Deutsch translations are present.                         |
+| Status            | New                                                                                              |
+| Charter Reference | C09_Language and Currency                                                                             |
+| Operating System  | Android                                                                                          |
+| Steps to Reproduce | 1.Select language "Italino". <br>2. Check for Balance and Popup text translation<br> |
+| Expected Result   | Popup and Balance text should be translated according to selected language.|
+| Actual Result     |Popup and Balance text is not translated according to selected language.|                  |
+| Impact            |User is unable to understand an Application. Application is not translating content like popup and Balance text in the preferred language.|
 
 
 ## 5. Bug and charter prioritisation:
