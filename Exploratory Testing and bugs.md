@@ -289,7 +289,7 @@ Add Account Payment Method Cash and VISA Card.
 | Bug ID   | Title                                                                 | Priority | Reason |
 |----------|-----------------------------------------------------------------------|----------|--------|
 | BUG-1001 | Amount for same "Food" category is not summarized in History.            | **High(P1)**   | Core budgeting fails - users cannot see total category spending, main app purpose broken |
-| BUG-1002 | |Selected Account payment method is not present in History for added Income.             | **High(P1)**   | Multi-account tracking impossible - cannot tell Cash vs VISA card income in history |
+| BUG-1002 | Selected Account payment method is not present in History for added Income.             | **High(P1)**   | Multi-account tracking impossible - cannot tell Cash vs VISA card income in history |
 | BUG-1003 | Amount Transfer details from Account Method VISA card or Cash is not updated in History (Three Lines View).             | **High(P1)**   | Cannot track money movement between accounts - breaks fundamental multi-account feature |
 | BUG-1004 | Disabled categories remain visible on main screen with previous transaction after disabling   | **Medium(P2)**   | Settings don't work - users see categories they disabled, breaks category management enabled disabled functionality |
 | BUG-1005 | Popup and "Balance" text translation is not present for other Languages like "Italino".Only English and Deutsch translations are present.  | **Low(P3)**   | Minor issue - affects only specific languages, core functions work |
