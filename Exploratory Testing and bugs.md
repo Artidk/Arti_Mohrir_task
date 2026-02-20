@@ -203,7 +203,7 @@ Add Account Payment Method Cash and VISA Card.
 | Bug ID            | BUG-1004                                                                                         |
 | Title             | Disabled categories remain visible on main screen with previous transaction after disabling                         |
 | Status            | New                                                                                              |
-| Charter Reference | C05_Transfer Account                                                                             |
+| Charter Reference | C06_Category picker                                                                            |
 | Operating System  | Android                                                                                          |
 | Steps to Reproduce | 1.Add Expense for 'Eating out' 500 EUR from Main Screen. .<br>2.Check the History is updated with 'Eating out' transaction  .<br>3. Disabled 'Eating out'  from Categories  | 
 | Expected Result   | After Disabled Category, It should not be displayed on the Main screen. Previous transaction should be hidden on the screen.|
