@@ -84,7 +84,7 @@ This document prepared based on my testing experience.
 Add Account Payment Method Cash and VISA Card.
 - Main screen Click on  '+' added income 5000 EUR "Salary" in VISA card Account Method.
 - Click on '+' add income 2000 EUR "Deposits" in Cash Account Method.
-- Check History by clicking on Three lines. |
+- Check History by clicking on Three lines. 
 
 **What worked**
 - All the income added are updated in the History with Green dot symbol.
@@ -175,6 +175,42 @@ Add Account Payment Method Cash and VISA Card.
 | Expected Result   |After clicking on Three Lines on Main Screen, Transfer Amount details should be present in History.|
 | Actual Result     |After clicking on Three Lines on Main Screen, Transfer Amount details are not present in History.|                  |
 | Impact            |User is unable to get an information about Amount Transfer from Histroy. This leads to mileading information to user. |
+
+### C06_Category picker – Findings
+
+**Perform below Steps**
+- Click on  Main screen Three dot(Upper Right Corner)
+- Click on Categories.
+- Check the Enabled Categories are visible on Main Screen.
+- Add Expenses for selected Categories.
+- Add Expense 'Eating out'500 EUR from Main Screen.
+- Check the Total balance and History updated.
+- Disable category 'Eating out' and should not be displayed on main screen.
+- Check Merged Categories as a one Category should be displayed on main screen.
+
+**What worked**
+- Categories are present on the main Screen as per Enabled function.
+- Disabled Function is also working and categories are not visible on the main screen.
+- Merge function is also working and Merged categories which is selected to be on main screen is visible.
+- History is updated and Balance also updated after adding expenses as per categories.
+
+**What didn't work**
+
+### C06_Category picker – Bug
+
+| Field             | Details                                                                                          |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| Bug ID            | BUG-1004                                                                                         |
+| Title             | Disabled categories remain visible on main screen with previous transaction after disabling                         |
+| Status            | New                                                                                              |
+| Charter Reference | C05_Transfer Account                                                                             |
+| Operating System  | Android                                                                                          |
+| Steps to Reproduce | 1.Add Expense for 'Eating out' 500 EUR from Main Screen. .<br>2.Check the History is updated with 'Eating out' transaction  .<br>3. Disabled 'Eating out'  from Categories  | 
+| Expected Result   | After Disabled Category, It should not be displayed on the Main screen. Previous transaction should be hidden on the screen.|
+| Actual Result     | After Disabled Category, Category is still present on the screen with previous transaction details.               |
+| Impact            | User can not trust App if he is disabling Category that means user wants to remove category from main screen and it should not be present on the main screen. It is impacting usability of an Application. |
+
+
 
 
 
