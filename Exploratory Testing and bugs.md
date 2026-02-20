@@ -210,7 +210,16 @@ Add Account Payment Method Cash and VISA Card.
 | Actual Result     | After Disabled Category, Category is still present on the screen with previous transaction details.               |
 | Impact            | User can not trust App if he is disabling Category that means user wants to remove category from main screen and it should not be present on the main screen. It is impacting usability of an Application. |
 
+### C07_Add Expense – Findings
 
+**Perform below Steps**
+- Click '-' button on  Main screen.
+- Add "-5 EUR" Expense.
+- Check for user is unable to add negative value during transaction. It should be blocked.
+
+**What worked**
+- Tried to add Expense "-5 EUR".
+- Negative transaction is blocked and unable to perform the further action.
 
 
 
