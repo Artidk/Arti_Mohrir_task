@@ -221,11 +221,23 @@ Add Account Payment Method Cash and VISA Card.
 - Tried to add Expense "-5 EUR".
 - Negative transaction is blocked and unable to perform the further action.
 
+### C08_Category Transaction – Findings
+
+**Perform below Steps**
+- Add Expenses on a date 12-02-2026.
+- Add Salary on 15-02-26.
+- Add other expenses and Details in the week and Feb Month.
+- Check balance is updated correctly and visible on the main screen after Switch between daily/weekly/monthly view
+
+**What worked**
+- Added Expenses on different Month and week , dates.
+- These transactions are visible on main screen after Switch between daily/weekly/monthly view  
 
 
-## 5. Defect and charter prioritisation:
 
-## 6. Risks for this application:
+## 5. Bug and charter prioritisation:
+
+## 6. Risks for the application:
 
 
 
