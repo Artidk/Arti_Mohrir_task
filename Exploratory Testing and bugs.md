@@ -284,8 +284,42 @@ Add Account Payment Method Cash and VISA Card.
 | C09_Language and Currency | Change currency and Language in settings and add expense, check if balance displays correct and translations update according to selected Language | **Low** | Settings changes happen rarely - most users stick to one currency/language during normal use. |
 
 
-## 6. Risks for the application:
+## 6. Defect Prioritization with reasons :
 
+| Bug ID   | Title                                                                 | Priority | Reason |
+|----------|-----------------------------------------------------------------------|----------|--------|
+| BUG-1001 | Amount for same "Food" category is not summarized in History.            | **High(P1)**   | Core budgeting fails - users cannot see total category spending, main app purpose broken |
+| BUG-1002 | |Selected Account payment method is not present in History for added Income.             | **High(P1)**   | Multi-account tracking impossible - cannot tell Cash vs VISA card income in history |
+| BUG-1003 | Amount Transfer details from Account Method VISA card or Cash is not updated in History (Three Lines View).             | **High(P1)**   | Cannot track money movement between accounts - breaks fundamental multi-account feature |
+| BUG-1004 | Disabled categories remain visible on main screen with previous transaction after disabling   | **Medium(P2)**   | Settings don't work - users see categories they disabled, breaks category management enabled disabled functionality |
+| BUG-1005 | Popup and "Balance" text translation is not present for other Languages like "Italino".Only English and Deutsch translations are present.  | **Low(P3)**   | Minor issue - affects only specific languages, core functions work |
+
+
+## 7. Risks for the application:
+
+**Main Screen shows current balances** :
+-Main screen widget displays current Cash/VISA card total Balance. Balance is visible to anyone picking up unlocked phone. There is security risk is present.
+
+**No separate encryption for individual transactions** :
+Single database file holds everything - one breach exposes complete financial history, no transaction-level protection.
+
+**Three-line history shows all accounts unprotected** :
+Single menu reveals all transactions in History. There is no any option for hide transactions.
+
+**No Guidance or support for Long-term planning using Data** : 
+Application does not use Expense or income data to guide user for their expenses and income for long term planning. It just tracks data as per dates or Months. User may get insecure and bored of doing repetitive tasks.
+
+**Single-device dependency risk** :
+If a user keeps data only on one device and doesn’t regularly back up to Google Drive, losing or resetting the phone means losing the entire expense history
+
+**Create data Backup- Backup file left unprotected** :
+Manual backups save as readable files in device storage - anyone with phone access can open and see all transaction history without app passcode.
+
+**Restore Data- Restore Data directly Accessible** :
+There is data integrity risk as no data is secured and anyone can access data from phone.
+
+**Misleading view of financial view** :
+If balances and summaries only reflect what the user enters manually and there is no bank connection or automatic validation, users may make decisions based on incomplete or wrong data.
 
 
 
