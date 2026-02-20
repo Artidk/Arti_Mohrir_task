@@ -268,7 +268,21 @@ Add Account Payment Method Cash and VISA Card.
 | Impact            |User is unable to understand an Application. Application is not translating content like popup and Balance text in the preferred language.|
 
 
-## 5. Bug and charter prioritisation:
+## 5. Charter prioritisation with reasons :
+
+
+| ID                | What I planned to check                                      | Priority | Reason |
+|-------------------|-------------------------------------------------------------|----------|--------|
+| C01_Add Expense   | Add New expense from main screen by clicking on '-' button, check if balance updates instantly | **High** | Users add expenses every day - if balance doesn't update right away, they stop trusting the app completely. |
+| C02_Add Income    | Add new income from main screen by clicking on '+', check if total balance shows correct income | **High**  | Income entries directly affect total balance available - wrong income means wrong financial view on Main screen. |
+| C03_History List  | Go to history, edit an expense amount and check if balance updates | **High**     | Editing past entries is common - balance must reflect changes immediately or user data becomes unreliable. |
+| C04_History List  | Go to history, delete a transaction, check if it disappears and balance updates | **High**     | Deleting wrong entries happens often - if balance doesn't fix itself, users lose trust in corrections. |
+| C05_Transfer Account | Transfer Amount from Cash to Payment card and also reverse transfer, check the Amount updates correctly | **High** | Moving money between accounts is core feature - if transfers break, multi-account tracking fails completely. |
+| C06_Category picker | Pick different categories when adding expenses, check if they show correctly in history | **Medium** | Categories help understand spending patterns but users can still track without perfect category display. |
+| C07_Add Expense   | Try entering negative amounts (-5 EUR) for expense and check if app blocks it | **Medium**  | Edge case input - most users enter normal amounts, but wrong handling can confuse balance calculations. |
+| C08_Category Transaction | Switch between daily/weekly/monthly view, check if Balance match my transactions | **Medium** | Time charts are useful for patterns but main daily balance works fine even if charts have small issues. |
+| C09_Language and Currency | Change currency and Language in settings and add expense, check if balance displays correct and translations update according to selected Language | **Low** | Settings changes happen rarely - most users stick to one currency/language during normal use. |
+
 
 ## 6. Risks for the application:
 
