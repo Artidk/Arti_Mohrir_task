@@ -76,5 +76,22 @@ public class PetLifecycleTest extends ApiTestBootstrap {
 
         Assert.assertEquals(updatedPet.getStatus(), "sold", "Pet status was not updated");
     }
+    @Test(description = "Verify that a pet can be deleted and is no longer retrievable")
+    @Story("Delete pet")
+    public void shouldDeletePetSuccessfully() {
+
+        // Arrange
+        PetRecord pet = PetBlueprint.createRandomPet();
+        petGateway.registerPet(pet);
+
+        // Act
+        Response deleteResponse = petGateway.removePet(pet.getId());
+        Response fetchResponse = petGateway.fetchPet(pet.getId());
+
+        // Assert
+        deleteResponse.then().statusCode(200);
+        Assert.assertEquals(fetchResponse.getStatusCode(), 404, "Deleted pet should not be retrievable");
+    }
+
 
 }

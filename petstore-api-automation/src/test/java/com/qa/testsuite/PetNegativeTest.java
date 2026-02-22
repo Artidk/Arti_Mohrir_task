@@ -84,5 +84,19 @@ public class PetNegativeTest extends ApiTestBootstrap {
         Long id = response.jsonPath().getLong("id");
         Assert.assertNotNull(id, "Expected server to generate an ID even for invalid payload");
     }
+    /**
+     * Edge Case 3: Empty payload
+     */
+
+    @Test(description = "ACTUAL BEHAVIOR: Creating a pet with empty JSON payload")
+    public void shouldReturnErrorForEmptyPayload() {
+
+        Response response = petGateway.createRawJson("{}");
+
+        assertStatusCode(response, 200);
+        Long id = response.jsonPath().getLong("id");
+        Assert.assertNotNull(id, "Expected server to generate an ID even for empty payload");
+
+    }
 
 }
