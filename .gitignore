@@ -1,0 +1,25 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Logs
+logs/
+*.log
+
+# Allure
+allure-results/
+
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Android
+*.keystore
+*.jks
