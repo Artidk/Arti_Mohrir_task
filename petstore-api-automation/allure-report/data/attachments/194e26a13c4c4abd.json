@@ -1,0 +1,18 @@
+{
+    "id": 451300,
+    "category": {
+        "id": 1,
+        "name": "default-category"
+    },
+    "name": "pet_451300",
+    "photoUrls": [
+        "https://images.petstore/451300"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "default-tag"
+        }
+    ],
+    "status": "available"
+}

@@ -1,0 +1,18 @@
+{
+    "id": 308425,
+    "category": {
+        "id": 1,
+        "name": "default-category"
+    },
+    "name": "pet_308425",
+    "photoUrls": [
+        "https://images.petstore/308425"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "default-tag"
+        }
+    ],
+    "status": "available"
+}

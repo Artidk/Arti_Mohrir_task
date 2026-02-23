@@ -1,0 +1,192 @@
+# **PetStore API Automation Framework**
+
+A project I built to prove that **test automation is software engineering**, not just scripting and writing code. 
+This framework captures real-world API behavior, not textbook REST expectations, using a **SOLID-driven**, maintainable structure that scales gracefully.
+
+---
+
+##  **1. Overview**
+
+This project is a clean, intentionally structured API automation framework built for the **Swagger PetStore API**.
+
+
+It’s built with:
+- **Clean architecture**
+- **SOLID principles**
+- **Predictable test behaviours**
+- **Real world API validation**
+- **Maintainability over shortcuts**
+
+
+---
+
+## **2. Architecture & Approach**
+
+### **Why this structure**
+Because good automation code should feel like production code.  
+A framework must be readable, extendable, and predictable.
+
+### **Why this stack**
+- **Java 21** – stable, expressive, modern syntax  
+- **TestNG** – mature, flexible orchestration  
+- **Rest Assured** – clean, fluent API calls  
+- **Jackson** – reliable JSON   
+- **Allure** – elegant, developer-centric reporting  
+- **Maven** – lifecycle + dependency management  
+
+### **Why SOLID**
+These principles are important to follw. they are the reason this framework won’t collapse as it grows:
+SOLID Principle:
+- **SRP** - each class does one thing well
+- **OCP** - new endpoints don’t require rewriting old code
+- **LSP** - models/gateways can be swapped or mocked
+- **ISP** - no bloated interfaces
+- **DIP** - tests depend on abstractions, not implementations
+This keeps the framework stable even as it grows.
+ 
+
+That’s how the framework stays **stable and extensible** beyond the demo stage.
+
+---
+
+## **3. Project Structure**
+
+petstore-api-automation/
+ ├── src
+ │    └── test
+ │         ├── java
+ │         │    └── com.qa
+ │         │         ├── foundation      → Base setup, environment loader, reusable assertions
+ │         │         ├── petclient       → API gateway (CRUD operations)
+ │         │         ├── petmodels       → Domain models aligned with Swagger schema
+ │         │         ├── testdata        → PetBlueprint (test data factory)
+ │         │         └── testsuite       → Positive, negative, and edge-case tests
+ │         └── resources
+ │              └── test-environment.properties → Base URI configuration
+ ├── allure-report/   → Static HTML report for the full execution
+ ├── pom.xml          → Maven configuration
+ └── .gitignore       → Clean repo
+
+
+Every piece has a defined purpose — no disposable code.
+
+---
+
+## **4. Test Coverage**
+
+###  Positive Flow
+- Create → Retrieve → Update → Delete → Verify Lifecycle  
+
+### Negative & Edge Cases
+The PetStore API… isn’t perfect. Instead of hiding that, my framework captures it.
+
+| **Scenario**        | **Expected REST** | **Actual API** | **Framework Expectation** |
+|----------------------|------------------:|---------------:|--------------------------:|
+| **Non existing ID**  | 404               | 404             |  404 handled gracefully |
+| **Negative ID**      | 400 / 404         | 404             |  treated as 404         |
+| **Empty JSON `{}`**  | 400               | 200             |  handled as 200         |
+| **Missing fields**   | 400               | 200             |  handled as 200         |
+| **Invalid payload**  | 400               | 200             |  handled as 200         |
+
+
+---
+## 🏁 Getting Started
+bash
+git clone https: https://github.com/Artidk/Arti_Mohrir_task.git
+cd petstore-api-automation
+mvn clean install
+
+
+## **5. Setup**
+
+### **You’ll need:**
+- Java 21  
+- Maven  
+- Any modern IDE (I use IntelliJ)  
+
+### **Install dependencies**
+ bash
+mvn clean install
+Environment config
+
+src/test/resources/test-environment.properties
+
+base.uri=https://petstore.swagger.io/v2
+---
+
+## **6. Running Tests**
+
+To run everything:
+
+mvn test
+allure generate allure-results --clean -o allure-report
+allure-report/index.html
+
+View report
+Open:
+allure-report/index.html
+(Use Firefox for local viewing — Chrome/Edge block local JS.)
+ ---
+ 
+## **7. Allure Execution Report**
+You’ll find the generated static report in:
+ allure-report/
+It contains:
+- Overview
+- Suites
+-	Behaviors
+- Timeline
+- Graphs
+- Attachments
+This is the exact report generated from the final execution.
+---
+
+  ## **8. Key Design Choices**
+
+ 1. Gateway pattern-
+All HTTP logic lives in PetGateway.
+Test classes stay business-focused and readable.
+
+2. Data factory-
+PetBlueprint dynamically creates valid/invalid payloads.
+Tests stay DRY, expressive, and maintainable.
+
+3. Reusable assertions-
+Consistent validation logic, centralized and extendable.
+
+4. Readable tests-
+Each test reads like behavior documentation, not just checks.
+
+5. Real-world behavior-
+This framework doesn’t fake the API’s oddities — it reflects them.
+---
+ 
+ ## **9. What This Project Demonstrates**
+ - I design for clarity
+ - I build frameworks that scale with SOLID principle
+ - I document real behaviours and not assumptions
+ - I write tests that are readable, predictable, and maintainable
+ - I understand CI principles and build frameworks that integrate cleanly
+
+ ---
+ 
+ ## **10. CI Stack Used **
+
+ Even though this project does not include a full CI pipeline file, the framework is CI ready and built with CI principles in mind.
+  CI Concepts Applied
+•	Tests run headlessly with Maven
+•	No UI dependencies
+•	No environment coupling
+•	Deterministic test data
+•	Clean exit codes for pipeline integration
+•	Allure results generated in a CI friendly format
+ 
+CI Tools This Framework Can Plug Into
+•	GitHub Actions
+•	Git
+
+##  Author
+**Arti Mohrir**  
+Berlin, Germany  
+Passionate about clean code, maintainable test frameworks, and real-world automation.
+
