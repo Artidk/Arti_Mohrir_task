@@ -90,6 +90,11 @@ The PetStore API… isn’t perfect. Instead of hiding that, my framework captur
 
 
 ---
+## 🏁 Getting Started
+bash
+git clone https: https://github.com/Artidk/Arti_Mohrir_task.git
+cd petstore-api-automation
+mvn clean install
 
 
 ## **5. Setup**
@@ -180,7 +185,7 @@ CI Tools This Framework Can Plug Into
 •	GitHub Actions
 •	Git
 
-## 👨‍💻 Author
+##  Author
 **Arti Mohrir**  
 Berlin, Germany  
 Passionate about clean code, maintainable test frameworks, and real-world automation.
