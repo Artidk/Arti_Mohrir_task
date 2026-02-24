@@ -1,0 +1,177 @@
+
+
+Monefy Mobile App Automation
+Android UI Automation Framework (Appium 8 + Java 17 + TestNG + Maven)
+This repository contains a complete mobile automation framework for the Monefy Lite Android application.
+It demonstrates modern Appium 8.x practices, clean architecture, and real world problem solving — including handling UI elements that do not expose locators on Android 14.
+The project is structured to be scalable, and easy to maintain.
+________________________________________
+Features
+Modern Appium 8.x (W3C Actions, no deprecated APIs)
+Appium 8 removed TouchAction, MobileElement, and other legacy APIs.
+This framework uses Selenium 4 W3C Actions for gestures.
+Clean Page Object Model (POM)
+Each screen is represented as a dedicated class under com.d.monefy.screens.
+Reusable BaseScreen
+Provides:
+•	click()
+•	type()
+•	id()
+•	xpath()
+•	tapByPercentage() (W3C coordinate tap)
+Coordinate based tap for the Floating Action Button (+)
+On Android 14, the Monefy Lite FAB does not expose a resource id in the UI hierarchy.
+Appium Inspector and UIAutomator do not show the element.
+To ensure reliable automation, the framework uses a percentage based coordinate tap:
+tapByPercentage(0.50, 0.88);
+This approach is:
+•	Resolution independent
+•	Emulator agnostic
+•	Stable across Android versions
+End to end flows
+Includes flows for:
+•	Adding income
+•	Adding expense
+•	Performing transfers
+________________________________________
+🧱 Project Structure
+src
+ ├── main
+ │    ├── java
+ │    │    └── com.d.monefy
+ │    │         ├── core.driver      # DriverProvider
+ │    │         ├── screens          # Page Objects
+ │    │         └── flows            # Business flows
+ │    └── resources
+ └── test
+      └── java
+           └── com.d.monefy.tests    # TestNG test classes
+________________________________________
+Environment Setup
+1. Install Android Studio
+•	Install Android Studio Flamingo or newer
+•	Install SDK Platform 34 (Android 14)
+•	Install: 
+o	Android SDK Tools
+o	Android SDK Platform Tools
+o	Android Emulator
+2. Create an Android Emulator
+Recommended configuration:
+Setting	Value
+Device	Pixel 6a / Pixel 7
+Android Version	14
+Play Store	Enabled
+RAM	2–4 GB
+Start the emulator before running tests.
+________________________________________
+🔍 Appium Inspector Setup
+1.	Install Appium Inspector
+2.	Start Appium Server manually:
+appium --port 4723
+3.	Use these capabilities:
+{
+  "platformName": "Android",
+  "appium:automationName": "UiAutomator2",
+  "appium:deviceName": "emulator-5554",
+  "appium:platformVersion": "14",
+  "appium:appPackage": "com.monefy.app.lite",
+  "appium:appActivity": "com.monefy.activities.main.MainActivity_",
+  "appium:noReset": true
+}
+Some Monefy builds use MainActivity or MainActivityAlias.
+Confirm via:
+adb shell dumpsys window | findstr mCurrentFocus
+________________________________________
+ The + Button Locator Issue (Real World Problem)
+On Android 14, the Monefy Lite floating action button (FAB) does not expose any locator:
+•	No resource-id
+•	No content-desc
+•	No text
+•	Not visible in Appium Inspector
+•	Not visible in UIAutomator dump
+Result
+All tests depending on tapping the + button failed.
+________________________________________
+Solution: Coordinate Based Tap (W3C Actions)
+To bypass the missing locator, the framework uses a percentage based tap:
+tapByPercentage(0.50, 0.88);
+This reliably opens the radial menu on all emulator sizes.
+Why this works
+•	FAB is always centered horizontally
+•	FAB is always above the bottom navigation
+•	Percentage based taps scale across devices
+________________________________________
+Driver Creation Failure & Skipped Tests (Important Note)
+During development, a known issue occurred:
+ClientConfig(...) constructor mismatch
+Driver session not created
+Tests skipped
+ Root Cause
+Appium 8.x requires Selenium 4.20.0.
+Any other Selenium version causes driver creation failure.
+Fix
+Explicitly set:
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.20.0</version>
+</dependency>
+Why tests were skipped
+If the driver fails in @BeforeClass, TestNG marks all tests as skipped.
+Allure also shows them as skipped.
+________________________________________
+Running Tests
+mvn clean test
+________________________________________
+Viewing Allure Report
+After running tests:
+allure serve target/allure-results
+This generates and opens the report automatically.
+________________________________________ Dependencies
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>8.5.1</version>
+</dependency>
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>4.20.0</version>
+</dependency>
+________________________________________
+Known Limitations
+1. Floating Action Button (+)
+No locator available on Android 14.
+Framework uses coordinate based tap.
+2. AppActivity differences
+Different app versions may use:
+•	MainActivity_
+•	MainActivity
+•	MainActivityAlias
+3. Driver creation may fail if:
+•	Wrong Selenium version
+•	Wrong AppActivity
+•	Emulator not fully booted
+•	Appium server not running
+4. Skipped tests
+If driver fails in setup, TestNG marks all tests as skipped.
+________________________________________
+About the This Project 
+•	Uses modern Appium 8 APIs
+•	Clean architecture
+•	Handles real world locator issues
+•	Demonstrates debugging and problem solving
+•	Shows understanding of Android 14 automation challenges
+________________________________________
+ Final project states that
+This framework reflects real engineering decisions:
+•	Diagnosing missing locators
+•	Adapting to Appium 8 changes
+•	Handling Android 14 UI limitations
+•	Ensuring stability with coordinate gestures
+•	Documenting known issues transparently
+________________________________________
+CI Tools 
+•	Github Actions
+•	GIT
