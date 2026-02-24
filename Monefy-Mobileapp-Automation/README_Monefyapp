@@ -34,7 +34,7 @@ Includes flows for:
 •	Adding expense
 •	Performing transfers
 ________________________________________
-🧱 Project Structure
+Project Structure
 src
  ├── main
  │    ├── java
@@ -64,7 +64,7 @@ Play Store	Enabled
 RAM	2–4 GB
 Start the emulator before running tests.
 ________________________________________
-🔍 Appium Inspector Setup
+Appium Inspector Setup
 1.	Install Appium Inspector
 2.	Start Appium Server manually:
 appium --port 4723
