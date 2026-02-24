@@ -1,6 +1,8 @@
 
 
 Monefy Mobile App Automation
+
+This is my second preference for automation task.
 Android UI Automation Framework (Appium 8 + Java 17 + TestNG + Maven)
 This repository contains a complete mobile automation framework for the Monefy Lite Android application.
 It demonstrates modern Appium 8.x practices, clean architecture, and real world problem solving — including handling UI elements that do not expose locators on Android 14.
