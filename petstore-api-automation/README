@@ -1,5 +1,6 @@
 # **PetStore API Automation Framework**
 
+This is my 1st preference for automtion task solution.
 A project I built to prove that **test automation is software engineering**, not just scripting and writing code. 
 This framework captures real-world API behavior, not textbook REST expectations, using a **SOLID-driven**, maintainable structure that scales gracefully.
 
